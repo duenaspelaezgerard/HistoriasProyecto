@@ -1,32 +1,19 @@
-import {Button} from "@nextui-org/react";
-import { Camera } from 'lucide-react';
+import { Button} from "@nextui-org/react";
+
+import Cards from "./components/Cards";
+import { Plus } from "lucide-react";
 
 
 export default function App() {
   return (
-    <div className="flex flex-wrap gap-4 items-center">
-      <Button color="primary" variant="solid">
-        Solid
-      </Button>
-      <Button color="primary" variant="faded">
-        Faded
-      </Button>
-      <Button color="primary" variant="bordered">
-        Bordered
-      </Button>
-      <Button color="primary" variant="light">
-        Light
-      </Button>
-      <Button color="primary" variant="flat">
-        Flat
-      </Button>
-      <Button color="primary" variant="ghost">
-        Ghost
-      </Button>
-      <Button color="primary" variant="shadow">
-        Shadow
-      </Button>
-      <Camera color="red" size={48} />
-    </div>
-  );
+    <>
+      <h1 className="text-black text-center text-4xl font-bold py-10">Mis Historias</h1>
+      <Cards />
+      <div className="fixed right-14 bottom-14">
+        <Button className="bg-success h-20 rounded-full shadow-large">
+          <Plus className="w-12 h-12 text-black font-bold"/>
+        </Button>
+      </div>
+    </>
+  )
 }
