@@ -5,6 +5,7 @@ import Cards from './components/Cards.jsx'
 import FormModal from './components/Modal.jsx';
 import { useGlobalContext } from './context/GlobalContext.jsx';
 
+  
 export default function App() {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
   const { setDataHistoria } = useGlobalContext()
