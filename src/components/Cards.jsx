@@ -14,6 +14,7 @@ export default function Cards() {
                     titulo={historia.titulo}
                     fecha={historia.fecha}
                     experiencia={historia.experiencia}
+                    comentario={historia.comentario}   
                     imagen={historia.imagen}    
                 />
             ))}
