@@ -3,21 +3,11 @@ import { Button, Card, CardFooter, CardHeader, Image, Modal, useDisclosure } fro
 import { Pencil, Trash2 } from "lucide-react";
 import { useGlobalContext } from "../context/GlobalContext";
 import PlantillaModal from "./Modal";
-import { useEffect } from "react";
+
 
 export default function SingleCard({ id, titulo, fecha, experiencia, comentario, imagen }) {
-    const { setDataHistoria } = useGlobalContext()
+    const { setDataHistoria, borrarHistoria} = useGlobalContext()
     const {isOpen, onOpen, onOpenChange} = useDisclosure()
-
-    useEffect(() => {
-        const getHistorias = async () => {
-            const response = await fetch('https://json-server-seven-gilt.vercel.app/historias', {method: 'GET'});
-            const data = await response.json();
-            console.log('historias', data);
-        };
-    
-        getHistorias()
-      }, []);
 
     function controladorEditarHistoria() {
         const historia = {
@@ -27,7 +17,7 @@ export default function SingleCard({ id, titulo, fecha, experiencia, comentario,
             "experiencia": experiencia,
             "comentario": comentario,
             "imagen": imagen
-        }
+        }  
 
         setDataHistoria(historia)
         onOpen()
@@ -35,7 +25,9 @@ export default function SingleCard({ id, titulo, fecha, experiencia, comentario,
 
     function controladorBorrarHistoria(id) {
         console.log("ID de la historia a borrar:", id);
+        borrarHistoria(id);
     }
+    
 
     return (
     <>
