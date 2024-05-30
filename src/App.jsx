@@ -7,11 +7,11 @@ import { useGlobalContext } from './context/GlobalContext.jsx';
 
   
 export default function App() {
-  const {isOpen, onOpen, onOpenChange} = useDisclosure();
+  const {isOpen, onOpen, onOpenChange, anadirHistoria} = useDisclosure();
   const { setDataHistoria } = useGlobalContext()
 
   function controladorNuevaHistoria() {
-    setDataHistoria(0)
+    setDataHistoria({})
     onOpen()
   }
 
